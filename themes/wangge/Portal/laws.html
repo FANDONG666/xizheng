@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<?php header("Content-Type:text/html;charset=UTF-8"); ?>
+	<head>
+		<meta charset="utf-8" />
+		<title>政策法规</title>
+		<link rel="stylesheet" href="/themes/wangge/css/comment.css" type="text/css" />
+		<link rel="stylesheet" href="/themes/wangge/css/laws.css" />
+		<script src="/themes/wangge/js/jquery-1.11.0.js"></script>
+	</head>
+
+	<body>
+	<tc_include file="Public:nav"/>
+		<!--<div class="hreader">-->
+			<!--<div class="log">-->
+				<!--<img src="/themes/wangge/img/logo.png" />-->
+			<!--</div>-->
+			<!--<ul>-->
+				<!--<li>-->
+					<!--<a href="index.html">首页</a>-->
+				<!--</li>-->
+				<!--<li>-->
+					<!--<a href="new.html">新闻中心</a>-->
+				<!--</li>-->
+				<!--<li class="cread">-->
+					<!--<a href="laws.html">政策法规</a>-->
+				<!--</li>-->
+				<!--<li>-->
+					<!--<a href="make_public.html">信息公开</a>-->
+				<!--</li>-->
+				<!--<li>-->
+					<!--<a href="work.html">网上办事</a>-->
+				<!--</li>-->
+				<!--<li>-->
+					<!--<a href="facilitate.html">便民信息</a>-->
+				<!--</li>-->
+			<!--</ul>-->
+		<!--</div>-->
+
+		<div class="mainOut">
+			<div class="top">
+				<img class="home" src="/themes/wangge/img/home.png"/>
+				<span><a href="{:U('/', array('nav_id' => 1))}">首页</a></span>
+				<span>></span>
+				<span><a href="{:U('list/index', array('id' => 11, 'nav_id' => 10))}">政策法规</a></span>
+				<span>></span>
+				<span class="bmxx">{$term.name}</span>
+			</div>
+			<div class="page1">
+				<ul>
+					<foreach name="cate" item="vo">
+						<li class="{$vo['term_id'] == $term['term_id'] ? 'addBorder' : ''}" data-href="{:U('list/laws', array('id' => $vo['term_id'], 'nav_id'=>intval($_REQUEST['nav_id'])))}"><img src="/themes/wangge/img/laws{$vo['term_id']}.png" alt="" /><div class="{$vo['term_id'] == $term['term_id'] ? 'addColor' : ''}">{$vo.name}</div></li>
+					</foreach>
+					<!--<li><img src="/themes/wangge/img/pic7.png" alt="" /><div>绿化方面</div></li>-->
+					<!--<li><img src="/themes/wangge/img/pic8.png" alt="" /><div>林业方面</div></li>-->
+					<!--<li><img src="/themes/wangge/img/pic9.png" alt="" /><div>野生动植物保护</div></li>-->
+					<!--<li><img src="/themes/wangge/img/pic10.png" alt="" /><div>市容环卫</div></li>-->
+					<!--<li><img src="/themes/wangge/img/pic11.png" alt="" /><div>行政审批</div></li>-->
+					<!--<li><img src="/themes/wangge/img/pic12.png" alt="" /><div>技术标准</div></li>-->
+				</ul>
+				</div>
+			<div class="main">
+				<div class="bt">{$term.name}</div>
+				<ul class="ul2">
+					<foreach name="data" item="vo">
+						<li>
+							<div class="time">{$vo.post_date|substr=0,10}</div>
+							<div class="title">{$vo.post_title|mb_substr=0,20,'utf-8'}</div>
+							<div class="text">{$vo.post_content|mb_substr=0,30,'utf-8'}</div>
+							<a href="{:U('article/index', array('id' => $vo['id'], 'cid' => $vo['term_id'], 'nav_id'=>intval($_REQUEST['nav_id'])))}" class="details">查看详情</a>
+						</li>
+					</foreach>
+					<!--<li>-->
+						<!--<div class="time">2017-04-21</div>-->
+						<!--<div class="title">上海市绿化和市容管理局关于印发上海市绿化和市容管理局关于印发上海市绿化和市容管理局关于印发上海市绿化和市容管理局关于印发上海市绿化和市容管理局关于印发</div>-->
+						<!--<div class="text">上海市绿化和市容管理局关于印发上海市绿化和市容管理局关于印发上海市绿化和市容管理局关于印发上海市绿化和市容管理局关于印发上海市绿化和市容管理局关于印发</div>-->
+						<!--<a href="" class="details">查看详情</a>-->
+					<!--</li>-->
+					<!--<li>-->
+						<!--<div class="time">2017-04-21</div>-->
+						<!--<div class="title">上海市绿化和市容管理局关于印发上海市绿化和市容管理局关于印发上海市绿化和市容管理局关于印发上海市绿化和市容管理局关于印发上海市绿化和市容管理局关于印发</div>-->
+						<!--<div class="text">上海市绿化和市容管理局关于印发上海市绿化和市容管理局关于印发上海市绿化和市容管理局关于印发上海市绿化和市容管理局关于印发上海市绿化和市容管理局关于印发</div>-->
+						<!--<a href="" class="details">查看详情</a>-->
+					<!--</li>-->
+					<!--<li>-->
+						<!--<div class="time">2017-04-21</div>-->
+						<!--<div class="title">上海市绿化和市容管理局关于印发上海市绿化和市容管理局关于印发上海市绿化和市容管理局关于印发上海市绿化和市容管理局关于印发上海市绿化和市容管理局关于印发</div>-->
+						<!--<div class="text">上海市绿化和市容管理局关于印发上海市绿化和市容管理局关于印发上海市绿化和市容管理局关于印发上海市绿化和市容管理局关于印发上海市绿化和市容管理局关于印发</div>-->
+						<!--<a href="" class="details">查看详情</a>-->
+					<!--</li>-->
+					<!--<li>-->
+						<!--<div class="time">2017-04-21</div>-->
+						<!--<div class="title">上海市绿化和市容管理局关于印发上海市绿化和市容管理局关于印发上海市绿化和市容管理局关于印发上海市绿化和市容管理局关于印发上海市绿化和市容管理局关于印发</div>-->
+						<!--<div class="text">上海市绿化和市容管理局关于印发上海市绿化和市容管理局关于印发上海市绿化和市容管理局关于印发上海市绿化和市容管理局关于印发上海市绿化和市容管理局关于印发</div>-->
+						<!--<a href="" class="details">查看详情</a>-->
+					<!--</li>-->
+					<!--<li>-->
+						<!--<div class="time">2017-04-21</div>-->
+						<!--<div class="title">上海市绿化和市容管理局关于印发上海市绿化和市容管理局关于印发上海市绿化和市容管理局关于印发上海市绿化和市容管理局关于印发上海市绿化和市容管理局关于印发</div>-->
+						<!--<div class="text">上海市绿化和市容管理局关于印发上海市绿化和市容管理局关于印发上海市绿化和市容管理局关于印发上海市绿化和市容管理局关于印发上海市绿化和市容管理局关于印发</div>-->
+						<!--<a href="" class="details">查看详情</a>-->
+					<!--</li>-->
+					<!--<li>-->
+						<!--<div class="time">2017-04-21</div>-->
+						<!--<div class="title">上海市绿化和市容管理局关于印发上海市绿化和市容管理局关于印发上海市绿化和市容管理局关于印发上海市绿化和市容管理局关于印发上海市绿化和市容管理局关于印发</div>-->
+						<!--<div class="text">上海市绿化和市容管理局关于印发上海市绿化和市容管理局关于印发上海市绿化和市容管理局关于印发上海市绿化和市容管理局关于印发上海市绿化和市容管理局关于印发</div>-->
+						<!--<a href="" class="details">查看详情</a>-->
+					<!--</li>-->
+				</ul>
+				<div class="bar">
+					<!--<span>上一页</span>-->
+					<!--<span class="addRed">1</span>-->
+					<!--<span>2</span>-->
+					<!--<span>3</span>-->
+					<!--<span>4</span>-->
+					<!--<span>下一页</span>-->
+					{$page}
+				</div>
+			</div>
+		</div>
+		<tc_include file="Public:footer"/>
+	</body>
+
+</html>
+<script>
+	
+	$('.bar span').click(function(){
+		$(this).addClass('addRed').siblings().removeClass('addRed');
+	})
+	$('.btn span').click(function(){
+		$(this).toggleClass('addBg').siblings().removeClass('addBg');
+	})
+	$('.page1 ul li').click(function(){
+		var index = $(this).index();
+		$(this).toggleClass('addBorder').siblings().removeClass('addBorder');
+		$('.page1 ul li div').removeClass('addColor');
+		$('.page1 ul li div').eq(index).addClass('addColor');
+		location.href = $(this).attr('data-href');
+	})
+</script>

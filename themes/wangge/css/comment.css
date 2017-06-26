@@ -1,0 +1,91 @@
+﻿html, body, ul, li, ol, dl, dd,form,input, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img, input, button {
+    margin: 0;
+    padding: 0;
+    font-family: "微软雅黑";
+}
+html,body{width: 100%;margin: 0;background: #ffffff;}
+html{font-size: 62.5%;}
+fieldset, img, input, button {
+    border: none;
+    outline-style: none;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+input {
+    padding-top: 0;
+    padding-bottom: 0;
+    font-family: "SimSun";
+}
+
+select, input {
+    vertical-align: middle;
+}
+
+select, input, textarea {
+    font-size: 12px;
+    margin: 0;
+}
+
+textarea {
+    resize: none;
+}
+
+img {
+	display: block;
+    border: 0;
+    vertical-align: middle;
+}
+body { 
+    color: #666;
+    width: 100%;
+}
+a {
+    text-decoration: none;
+    color: #fff;
+    outline: none;
+}
+li{list-style: none;}
+
+h1, h2, h3, h4, h5, h6 {
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 100%;
+}
+
+s, i, em {
+    font-style: normal;
+    text-decoration: none;
+}
+.mi-right ul{height: 805px;}
+
+table{ border-collapse:collapse;}
+table td{padding:5px 10px;font-size:16px}
+
+
+/*公共*/
+/*首页*/
+
+/*头部*/
+.hreader{height: 100px;width: 1085px;margin: 0 auto;}
+.hreader .log{float: left;height: 60px;margin-top: 20px;}
+.hreader .log img{height: 100%;}
+.hreader ul{float: right;margin-top: 26px;height: 52px;}
+.hreader ul li{float: left;padding: 0 30px;font-size: 17px;height: 48px;line-height: 48px;border-bottom: 4px solid #fff;}
+.hreader ul .cread{border-bottom: 4px solid #e70012;}
+.hreader ul .cread a{color: #E70012;}
+.hreader ul li:hover{border-bottom: 4px solid #e70012;}
+.hreader ul li:hover a{color: #e70012;}
+.hreader li a{color: #000;}
+
+ /*底部*/
+.btm{background: #202020;height: 120px;width: 100%;}
+.btm_content{margin: 0 auto;height: 120px;width: 1085px;position: relative;}
+.btm_content p{padding-top: 28px;color: #fff;font-size: 13px;text-align: center;}
+.btm_content div{position: absolute;top:8px;right: 0;width: 270px;}
+.btm_content div img{height: 105px;width: 105px;float: left;}
+.btm_content div ul{float: left;margin-left: 10px;margin-top: 15px;}
+.btm_content div li{font-size: 13px;color: #FFFFFF;line-height: 25px;}
+.copyright{display: inline-block;position: relative;top: -2px;}

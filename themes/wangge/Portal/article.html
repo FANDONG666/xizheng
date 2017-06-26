@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>{$post_title}</title>
+		<link rel="stylesheet" href="/themes/wangge/css/comment.css" type="text/css" />
+		<link rel="stylesheet" href="/themes/wangge/css/details.css" type="text/css" />
+		<script src="/themes/wangge/js/jquery-1.11.0.js"></script>
+	</head>
+
+	<body>
+		<tc_include file="Public:nav"/>
+		<div class="banner">
+			<img src="/themes/wangge/img/ban3.png"/>
+		</div>
+
+		<div class="barOut">
+			<div class="bar">
+				<php>
+				foreach($nav_one as $k => $v){
+					if($v['selected'] === true){
+						$nav_one_selected_href = $v['href'];
+					}
+				}
+				</php>
+				<img src="/themes/wangge/img/home.png"/>
+				<span><a href="./">首页</a></span>
+				<span>></span>
+				<span><a href="{$nav_one_selected_href}">{$term.name}</a></span>
+				<span>></span>
+				<span class="redText">{$post_title}</span>
+			</div>
+		</div>
+		<div class="main">
+			<h1>{$post_title}</h1>
+			<div class="time">
+				<span>{$post_modified|substr=0,10}</span>
+				<span>(浏览量:{$post_hits})</span>
+			</div>
+			{$post_content}
+			<div class="btOut">
+				<div class="pOut">
+					<p>
+						<if condition="!empty($prev)">
+							<a href="{:leuu('article/index',array('id'=>$prev['object_id'],'cid'=>$prev['term_id']))}">上一篇:{$prev['post_title']}</a>
+						</if>
+					</p>
+					<p>
+						<if condition="!empty($next)">
+							<a href="{:leuu('article/index',array('id'=>$next['object_id'],'cid'=>$next['term_id']))}">下一篇:{$next['post_title']}</a>
+						</if>
+					</p>
+				</div>
+				<div class="return" onClick="javascript:window.history.go(-1);">返回</div>
+			</div>
+			
+				
+			
+		</div>
+		<tc_include file="Public:footer"/>
+	</body>
+
+</html>
+<script>
+	console.log($('.bar span'));
+	$('.bar span').click(function(){
+		$(this).addClass('addRed').siblings().removeClass('addRed');
+	})
+</script>

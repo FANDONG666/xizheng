@@ -1,0 +1,231 @@
+<admintpl file="header"/>
+</head>
+<body>
+	<div class="wrap js-check-wrap">
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="#">联系我们</a></li>
+		</ul>
+		<form action="{:U('Portal/AdminContact/edit_post')}" method="post" class="form-horizontal js-ajax-forms" enctype="multipart/form-data">
+			<div class="row-fluid">
+				<div class="span9">
+					<table class="table table-bordered">
+						<tr>
+							<th width="80">电话</th>
+							<td>
+								<input type="text" style="width: 400px;" name="tel" value="{$data.tel}" placeholder="请输入电话" />
+								<span class="form-required">*</span>
+							</td>
+						</tr>
+						<tr>
+							<th width="80">邮箱</th>
+							<td>
+								<input type="text" style="width: 400px;" name="email" value="{$data.email}" placeholder="请输入邮箱" />
+								<span class="form-required">*</span>
+							</td>
+						</tr>
+						<tr>
+							<th width="80">传真</th>
+							<td>
+								<input type="text" style="width: 400px;" name="fax" value="{$data.fax}" placeholder="请输入传真" />
+								<span class="form-required">*</span>
+							</td>
+						</tr>
+						<tr>
+							<th width="80">地址</th>
+							<td>
+								<input type="text" style="width: 400px;" name="address" value="{$data.address}" placeholder="请输入地址" />
+								<span class="form-required">*</span>
+							</td>
+						</tr>
+						<tr>
+							<th>缩略图</th>
+							<td>
+								<div style="text-align: left;">
+									<input type="hidden" name="map_pic" id="thumb" value="{$data.map_pic}">
+									<a href="javascript:upload_one_image('图片上传','#thumb');">
+										<if condition="empty($data['map_pic'])">
+											<img src="__TMPL__Public/assets/images/default-thumbnail.png" id="thumb-preview" width="135" style="cursor: hand"/>
+											<else />
+											<img src="{:sp_get_image_preview_url($data['map_pic'])}" id="thumb-preview" width="135" style="cursor: hand"/>
+										</if>
+									</a>
+									<input type="button" class="btn btn-small" onclick="$('#thumb-preview').attr('src','__TMPL__Public/assets/images/default-thumbnail.png');$('#thumb').val('');return false;" value="取消图片">
+								</div>
+							</td>
+						</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="form-actions">
+				<button class="btn btn-primary js-ajax-submit" type="submit">{:L('SAVE')}</button>
+			</div>
+		</form>
+	</div>
+	<script type="text/javascript" src="__PUBLIC__/js/common.js"></script>
+	<script type="text/javascript">
+		//编辑器路径定义
+		var editorURL = GV.WEB_ROOT;
+	</script>
+	<script type="text/javascript" src="__PUBLIC__/js/ueditor/ueditor.config.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/ueditor/ueditor.all.min.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$(".js-ajax-close-btn").on('click', function(e) {
+				e.preventDefault();
+				Wind.use("artDialog", function() {
+					art.dialog({
+						id : "question",
+						icon : "question",
+						fixed : true,
+						lock : true,
+						background : "#CCCCCC",
+						opacity : 0,
+						content : "您确定需要关闭当前页面嘛？",
+						ok : function() {
+							setCookie("refersh_time", 1);
+							window.close();
+							return true;
+						}
+					});
+				});
+			});
+			/////---------------------
+			Wind.use('validate', 'ajaxForm', 'artDialog', function() {
+				//javascript
+
+				//编辑器
+				editorcontent = new baidu.editor.ui.Editor();
+				editorcontent.render('content');
+				try {
+					editorcontent.sync();
+				} catch (err) {
+				}
+				;
+				//增加编辑器验证规则
+				jQuery.validator.addMethod('editorcontent', function() {
+					try {
+						editorcontent.sync();
+					} catch (err) {
+					}
+					;
+					return editorcontent.hasContents();
+				});
+				var form = $('form.js-ajax-forms');
+				//ie处理placeholder提交问题
+				if ($.browser && $.browser.msie) {
+					form.find('[placeholder]').each(function() {
+						var input = $(this);
+						if (input.val() == input.attr('placeholder')) {
+							input.val('');
+						}
+					});
+				}
+				//表单验证开始
+				form.validate({
+					//是否在获取焦点时验证
+					onfocusout : false,
+					//是否在敲击键盘时验证
+					onkeyup : false,
+					//当鼠标掉级时验证
+					onclick : false,
+					//验证错误
+					showErrors : function(errorMap, errorArr) {
+						//errorMap {'name':'错误信息'}
+						//errorArr [{'message':'错误信息',element:({})}]
+						try {
+							$(errorArr[0].element).focus();
+							art.dialog({
+								id : 'error',
+								icon : 'error',
+								lock : true,
+								fixed : true,
+								background : "#CCCCCC",
+								opacity : 0,
+								content : errorArr[0].message,
+								cancelVal : '确定',
+								cancel : function() {
+									$(errorArr[0].element).focus();
+								}
+							});
+						} catch (err) {
+						}
+					},
+					//验证规则
+					rules : {
+						'tel' : {
+							required : 1
+						},
+						'email' : {
+                            required : 1
+						},
+                        'fax' : {
+                            required : 1
+                        },
+                        'address' : {
+                            required : 1
+                        }
+					},
+					//验证未通过提示消息
+					messages : {
+						'tel' : {
+							required : '电话不能为空'
+						},
+						'email' : {
+                            required : '邮箱不能为空'
+						},
+                        'fax' : {
+                            required : '传真不能为空'
+                        },
+                        'address' : {
+                            required : '地址不能为空'
+                        }
+					},
+					//给未通过验证的元素加效果,闪烁等
+					highlight : false,
+					//是否在获取焦点时验证
+					onfocusout : false,
+					//验证通过，提交表单
+					submitHandler : function(forms) {
+						$(forms).ajaxSubmit({
+							url : form.attr('action'), //按钮上是否自定义提交地址(多按钮情况)
+							dataType : 'json',
+							beforeSubmit : function(arr, $form, options) {
+
+							},
+							success : function(data, statusText, xhr, $form) {
+								if (data.status) {
+									setCookie("refersh_time", 1);
+									//添加成功
+									Wind.use("artDialog", function() {
+										art.dialog({
+											id : "succeed",
+											icon : "succeed",
+											fixed : true,
+											lock : true,
+											background : "#CCCCCC",
+											opacity : 0,
+											content : data.info,
+											button : [ {
+												name : '确定',
+												callback : function() {
+													//reloadPage(window);
+													return true;
+												},
+												focus : true
+											} ]
+										});
+									});
+								} else {
+									artdialog_alert(data.info);
+								}
+							}
+						});
+					}
+				});
+			});
+			////-------------------------
+		});
+	</script>
+</body>
+</html>

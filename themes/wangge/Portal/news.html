@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<?php header("Content-Type:text/html;charset=UTF-8"); ?>
+	<head>
+		<meta charset="utf-8" />
+		<title>新闻中心</title>
+		<link rel="stylesheet" href="/themes/wangge/css/comment.css" type="text/css" />
+		<link rel="stylesheet" href="/themes/wangge/css/news.css" />
+		<script src="/themes/wangge/js/jquery-1.11.0.js"></script>
+	</head>
+	<body>
+	<tc_include file="Public:nav"/>
+		<div class="banner">
+			<img src="/themes/wangge/img/ban2.png"/>
+		</div>
+		<div class="mianOut">
+			<div class="main">
+				<div class="nav">
+					<span class="<?php if ($term['term_id'] == $newsId) { echo 'addColor';} ?>" data-id="{$newsId}" onclick="location.href = '{:U(\'portal/list/news\', array(\'nav_id\' => intval($_REQUEST[\'nav_id\'])))}'">全部</span>
+					<foreach name="cate" item="vo">
+						<span class="<?php if ($term['term_id'] == $vo['term_id']) { echo 'addColor';} ?>" data-id="{$vo['term_id']}" onclick="location.href = '{:U(\'portal/list/news\', array(\'id\' => $vo[\'term_id\'], \'nav_id\' => intval($_REQUEST[\'nav_id\'])))}'">{$vo.name}</span>
+					</foreach>
+					<!--<span>公告通知</span>-->
+					<!--<span>综合新闻</span>-->
+					<!--<span>行业新闻</span>-->
+					<!--<span>图片新闻</span>-->
+					<!--<span>视频新闻</span>-->
+				</div>
+				<foreach name="data" item="vo">
+				<div class="slideBar">
+					<div class="top">
+						<div class="left"><img class="add" src="/themes/wangge/img/add.png"/></div>
+						<div class="right">{$vo.post_title|mb_substr=0,40,'utf-8'}</div>
+					</div>
+					<div class="hide">
+						<div class="left2"><img class="minus" src="/themes/wangge/img/minus.png"/></div>
+						<div class="right2">
+							<div class="top2">
+								<a href="{:U('portal/article/index', array('id' => $vo['id'], 'cid' => $vo['term_id'], 'nav_id'=>intval($_REQUEST['nav_id'])))}" target="_blank">{$vo.post_title|mb_substr=0,40,'utf-8'}</a>
+								<span>{$vo.post_date|substr=0,10}</span>
+							</div>
+							<p>{$vo.post_content|strip_tags|mb_substr=0,200,'utf-8'}</p>
+						</div>
+					</div>
+				</div>
+				</foreach>
+				<!--<div class="slideBar">-->
+					<!--<div class="top">-->
+						<!--<div class="left"><img class="add" src="/themes/wangge/img/add.png"/></div>-->
+						<!--<div class="right">七宝镇班子领导带队走访宝龙广场</div>-->
+					<!--</div>-->
+					<!--<div class="hide">-->
+						<!--<div class="left2"><img class="minus" src="/themes/wangge/img/minus.png"/></div>-->
+						<!--<div class="right2">-->
+							<!--<div class="top2">-->
+								<!--<a href="JavaScript:;">黎明花园居委组织楼组长崇明一日游</a>-->
+								<!--<span>2017-04-27</span>-->
+							<!--</div>-->
+							<!--<p>4月26日，黎明花园居委组织居民楼组长崇明一日游。此次活动共有52名楼组长参加了此次活动。</p>-->
+							<!--<p>导游带领大家参观了农场的油菜花、桃花，带领大家在草莓园内摘草莓，在鸟语花香中，楼组长们尽情的放松自己的心情，呼吸新鲜的空气，感受大自然的美丽</p>-->
+						<!--</div>-->
+					<!--</div>-->
+				<!--</div>-->
+				<!--<div class="slideBar">-->
+					<!--<div class="top">-->
+						<!--<div class="left"><img class="add" src="/themes/wangge/img/add.png"/></div>-->
+						<!--<div class="right">七宝镇班子领导带队走访宝龙广场</div>-->
+					<!--</div>-->
+					<!--<div class="hide">-->
+						<!--<div class="left2"><img class="minus" src="/themes/wangge/img/minus.png"/></div>-->
+						<!--<div class="right2">-->
+							<!--<div class="top2">-->
+								<!--<a href="JavaScript:;">黎明花园居委组织楼组长崇明一日游</a>-->
+								<!--<span>2017-04-27</span>-->
+							<!--</div>-->
+							<!--<p>4月26日，黎明花园居委组织居民楼组长崇明一日游。此次活动共有52名楼组长参加了此次活动。</p>-->
+							<!--<p>导游带领大家参观了农场的油菜花、桃花，带领大家在草莓园内摘草莓，在鸟语花香中，楼组长们尽情的放松自己的心情，呼吸新鲜的空气，感受大自然的美丽</p>-->
+						<!--</div>-->
+					<!--</div>-->
+				<!--</div>-->
+				<!--<div class="slideBar">-->
+					<!--<div class="top">-->
+						<!--<div class="left"><img class="add" src="/themes/wangge/img/add.png"/></div>-->
+						<!--<div class="right">七宝镇班子领导带队走访宝龙广场</div>-->
+					<!--</div>-->
+					<!--<div class="hide">-->
+						<!--<div class="left2"><img class="minus" src="/themes/wangge/img/minus.png"/></div>-->
+						<!--<div class="right2">-->
+							<!--<div class="top2">-->
+								<!--<a href="JavaScript:;">黎明花园居委组织楼组长崇明一日游</a>-->
+								<!--<span>2017-04-27</span>-->
+							<!--</div>-->
+							<!--<p>4月26日，黎明花园居委组织居民楼组长崇明一日游。此次活动共有52名楼组长参加了此次活动。</p>-->
+							<!--<p>导游带领大家参观了农场的油菜花、桃花，带领大家在草莓园内摘草莓，在鸟语花香中，楼组长们尽情的放松自己的心情，呼吸新鲜的空气，感受大自然的美丽</p>-->
+						<!--</div>-->
+					<!--</div>-->
+				<!--</div>-->
+				<!--<div class="slideBar">-->
+					<!--<div class="top">-->
+						<!--<div class="left"><img class="add" src="/themes/wangge/img/add.png"/></div>-->
+						<!--<div class="right">七宝镇班子领导带队走访宝龙广场</div>-->
+					<!--</div>-->
+					<!--<div class="hide">-->
+						<!--<div class="left2"><img class="minus" src="/themes/wangge/img/minus.png"/></div>-->
+						<!--<div class="right2">-->
+							<!--<div class="top2">-->
+								<!--<a href="JavaScript:;">黎明花园居委组织楼组长崇明一日游</a>-->
+								<!--<span>2017-04-27</span>-->
+							<!--</div>-->
+							<!--<p>4月26日，黎明花园居委组织居民楼组长崇明一日游。此次活动共有52名楼组长参加了此次活动。</p>-->
+							<!--<p>导游带领大家参观了农场的油菜花、桃花，带领大家在草莓园内摘草莓，在鸟语花香中，楼组长们尽情的放松自己的心情，呼吸新鲜的空气，感受大自然的美丽</p>-->
+						<!--</div>-->
+					<!--</div>-->
+				<!--</div>-->
+				<!--<div class="slideBar">-->
+					<!--<div class="top">-->
+						<!--<div class="left"><img class="add" src="/themes/wangge/img/add.png"/></div>-->
+						<!--<div class="right">七宝镇班子领导带队走访宝龙广场</div>-->
+					<!--</div>-->
+					<!--<div class="hide">-->
+						<!--<div class="left2"><img class="minus" src="/themes/wangge/img/minus.png"/></div>-->
+						<!--<div class="right2">-->
+							<!--<div class="top2">-->
+								<!--<a href="JavaScript:;">黎明花园居委组织楼组长崇明一日游</a>-->
+								<!--<span>2017-04-27</span>-->
+							<!--</div>-->
+							<!--<p>4月26日，黎明花园居委组织居民楼组长崇明一日游。此次活动共有52名楼组长参加了此次活动。</p>-->
+							<!--<p>导游带领大家参观了农场的油菜花、桃花，带领大家在草莓园内摘草莓，在鸟语花香中，楼组长们尽情的放松自己的心情，呼吸新鲜的空气，感受大自然的美丽</p>-->
+						<!--</div>-->
+					<!--</div>-->
+				<!--</div>-->
+				<!--<div class="slideBar">-->
+					<!--<div class="top">-->
+						<!--<div class="left"><img class="add" src="/themes/wangge/img/add.png"/></div>-->
+						<!--<div class="right">七宝镇班子领导带队走访宝龙广场</div>-->
+					<!--</div>-->
+					<!--<div class="hide">-->
+						<!--<div class="left2"><img class="minus" src="/themes/wangge/img/minus.png"/></div>-->
+						<!--<div class="right2">-->
+							<!--<div class="top2">-->
+								<!--<a href="JavaScript:;">黎明花园居委组织楼组长崇明一日游</a>-->
+								<!--<span>2017-04-27</span>-->
+							<!--</div>-->
+							<!--<p>4月26日，黎明花园居委组织居民楼组长崇明一日游。此次活动共有52名楼组长参加了此次活动。</p>-->
+							<!--<p>导游带领大家参观了农场的油菜花、桃花，带领大家在草莓园内摘草莓，在鸟语花香中，楼组长们尽情的放松自己的心情，呼吸新鲜的空气，感受大自然的美丽</p>-->
+						<!--</div>-->
+					<!--</div>-->
+				<!--</div>-->
+				<!--<div class="slideBar">-->
+					<!--<div class="top">-->
+						<!--<div class="left"><img class="add" src="/themes/wangge/img/add.png"/></div>-->
+						<!--<div class="right">七宝镇班子领导带队走访宝龙广场</div>-->
+					<!--</div>-->
+					<!--<div class="hide">-->
+						<!--<div class="left2"><img class="minus" src="/themes/wangge/img/minus.png"/></div>-->
+						<!--<div class="right2">-->
+							<!--<div class="top2">-->
+								<!--<a href="JavaScript:;">黎明花园居委组织楼组长崇明一日游</a>-->
+								<!--<span>2017-04-27</span>-->
+							<!--</div>-->
+							<!--<p>4月26日，黎明花园居委组织居民楼组长崇明一日游。此次活动共有52名楼组长参加了此次活动。</p>-->
+							<!--<p>导游带领大家参观了农场的油菜花、桃花，带领大家在草莓园内摘草莓，在鸟语花香中，楼组长们尽情的放松自己的心情，呼吸新鲜的空气，感受大自然的美丽</p>-->
+						<!--</div>-->
+					<!--</div>-->
+				<!--</div>-->
+				<div class="pageBar">
+					<div class="left3">
+						<span>共</span>
+						<span class="redText">{$pageCount}</span>
+						<span>页</span>
+						<span class="redText">{$count}</span>
+						<span>条</span>
+					</div>
+					<div class="right3">
+						<!--<span>上一页</span>-->
+						<!--<span class="addBg">1</span>-->
+						<!--<span>2</span>-->
+						<!--<span>3</span>-->
+						<!--<span>4</span>-->
+						<!--<span>5</span>-->
+						<!--<span>6</span>-->
+						<!--<span>下一页</span>-->
+						{$page}
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+		<tc_include file="Public:footer"/>
+	</body>
+
+</html>
+<script>
+    $('.nav span').click(function(){
+        $(this).addClass('addColor').siblings().removeClass('addColor');
+    })
+
+
+    $('.slideBar').hover(function(){
+
+        var index = $('.slideBar').index($(this));
+        $('.top').eq(index).hide();
+        $('.hide').eq(index).show();
+    },function(){
+        var index = $('.slideBar').index($(this));
+        $('.top').eq(index).show();
+        $('.hide').eq(index).hide();
+    })
+
+
+
+    $('.right3 span').click(function(){
+        $(this).addClass('addBg').siblings().removeClass('addBg');
+    })
+</script>

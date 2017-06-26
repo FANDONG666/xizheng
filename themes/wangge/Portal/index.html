@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<?php header("Content-Type:text/html;charset=UTF-8"); ?>
+	<head>
+		<meta charset="utf-8" />
+		<title>七宝镇首页</title>
+		<link rel="stylesheet" href="/themes/wangge/css/comment.css" type="text/css" />
+		<link rel="stylesheet" href="/themes/wangge/css/index.css" type="text/css" />
+	</head>
+
+	<body>
+		<tc_include file="Public:nav"/>
+		<div class="banner">
+			<img src="/themes/wangge/img/banner.png" />
+		</div>
+		<div class="content">
+			<div class="content_top"><em></em><span>城管网络中心</span><em></em></div>
+			<ul>
+				<li>
+					<a href="{:U('list/index', array('id' => 19, 'nav_id' => 18))}">
+						<div><img src="/themes/wangge/img/1.png" /></div>
+						<h2>市政方面</h2>
+						<p>七宝镇市政工程，包括道路，包括公路、城市道路及其桥涵、道口、停车场等附属设施。 市政管线，包括供水管道</p>
+					</a>
+				</li>
+				<li>
+					<a href="{:U('list/index', array('id' => 27, 'nav_id' => 26))}">
+						<div><img src="/themes/wangge/img/2.png" /></div>
+						<h2>绿化方面</h2>
+						<p>七宝镇栽植防护林、路旁树木、农作物以及居民区和公园内的各种植物等。</p>
+					</a>
+				</li>
+				<li>
+					<a href="{:U('list/index', array('id' => 34, 'nav_id' => 33))}">
+						<div><img src="/themes/wangge/img/3.png" /></div>
+						<h2>环卫方面</h2>
+						<p>七宝镇城市环境卫生管理，是在城市政府领导下，行政主管部门依靠专职队伍和社会力量，依法对道路、公共场所、垃圾</p>
+					</a>
+				</li>
+				<li>
+					<a href="{:U('list/index', array('id' => 46, 'nav_id' => 45))}">
+						<div><img src="/themes/wangge/img/4.png" /></div>
+						<h2>市容方面</h2>
+						<p>七宝镇市政工程，包括道路，包括公路、城市道路及其桥涵、道口、停车场等附属设施。 市政管线，包括供水管道</p>
+					</a>
+				</li>
+				<li>
+					<a href="{:U('list/index', array('id' => 57, 'nav_id' => 56))}">
+						<div><img src="/themes/wangge/img/5.png" /></div>
+						<h2>交通方面</h2>
+						<p>七宝镇栽植防护林、路旁树木、农作物以及居民区和公园内的各种植物等。</p>
+					</a>
+				</li>
+				<li>
+					<a href="{:U('list/index', array('id' => 62, 'nav_id' => 61))}">
+						<div><img src="/themes/wangge/img/6.png" /></div>
+						<h2>建筑垃圾、渣土管理</h2>
+						<p>七宝镇城市环境卫生管理，是在城市政府领导下，行政主管部门依靠专职队伍和社会力量，依法对道路、公共场所、垃圾</p>
+					</a>
+				</li>
+			</ul>
+		</div>
+
+		<div id="wrap-container" class="clearfix">
+			<div class="examples_body">
+				<div class="content_top" id="content_top"><em></em><span>信息中心</span><em></em></div>
+				<ul class="bannerHolder">
+					<foreach name="infoCenter" item="vo">
+					<li>
+						<div class="new">
+							<a href="{:leuu('portal/article/index',array('id'=>$vo['id'],'cid'=>$vo['term_id'], 'nav_id' => 4))}" target="_blank">
+								<img alt="The Best Designs" src="<?php echo sp_get_image_url(json_decode($vo['smeta'], true)['thumb'])?>">
+								<p class="companyInfo" style="display: none;">{$vo.post_title|mb_substr=0,20,'utf-8'}
+								<span>{$vo.post_date}</span></p>
+								<div class="cornerTL"></div>
+								<div class="cornerTR"></div>
+								<div class="cornerBL"></div>
+								<div class="cornerBR"></div>
+							</a>
+						</div>
+					</li>
+					</foreach>
+				</ul>
+				<h4><a href="{:U('list/index', array('id' => 5, 'nav_id' => 4))}"><span>查看全部新闻</span><img src="/themes/wangge/img/jiany.png"/></a></h4>
+			</div>
+		</div>
+		<div class="information">
+			<div class="inf_cont">
+				<h2>信息公开</h2>
+				<p>
+				信息公开是指国家行政机关和法律、法规以及规章授权和委托的组织，在行使国家行政管理职权的过程中，通过法定形式和程序，主动将政府信息向社会公众或依申请而向特定的个人或组织公开的制度。
+				信息公开是指国家行政机关和法律、法规以及规章授权和委托的组织，在行使国家行政管理职权的过程中，通过法定形式和程序，主动将政府信息向社会公众或依申请而向特定的个人或组织公开的制度。
+				信息公开是指国家行政机关和法律、法规以及规章授权和委托的组织，在行使国家行政管理职权的过程中，通过法定形式和程序，主动将政府信息向社会公众或依申请而向特定的个人或组织公开的制度。
+				信息公开是指国家行政机关和法律、法规以及规章授权和委托的组织，在行使国家行政管理职权的过程中，通过法定形式和程序，主动将政府信息向社会公众或依申请而向特定的个人或组织公开的制度。
+				信息公开是以公民获得政府信息的权利为基础的，而不是以行政权力为基础。现代宪政观念告诉我们，政府是否应当公开信息，是否向民众提供信息，这并不是政府的权力决定的，而是由民众的权利决定的，这种权利是民众所享有的宪法权利。所以说，民众需要什么信息，政府就要提供什么信息，只有这样，相应的宪法上的权利才能够实现。公民个人根据宪法权利和具体的法律规定，自由地获取政府信息，是公民和公共权力机关之间关系的一项基本原则。
+				</p>
+				<h4><a href="{:U('list/index', array('id' => 18, 'nav_id' => 17))}"><span>查看更多</span><img src="/themes/wangge/img/jiany.png"/></a></h4>
+			</div>
+		</div>
+		<div class="code">
+			<div class="code_top"><em></em><span>政策法规</span><em></em></div>
+			<ul class="laws_list">
+				<li data-href="{:U('list/laws', array('id' => 12, 'nav_id' => 10))}">
+					<a>
+						<span>绿化方面</span>
+						<img src="/themes/wangge/img/code1.png" />
+					</a>
+				</li>
+				<li  data-href="{:U('list/laws', array('id' => 13, 'nav_id' => 10))}">
+					<a>
+						<span>林业方面</span>
+						<img src="/themes/wangge/img/code2.png" />
+					</a>
+				</li>
+				<li  data-href="{:U('list/laws', array('id' => 14, 'nav_id' => 10))}">
+					<a>
+						<span>野生动植物保护</span>
+						<img src="/themes/wangge/img/code3.png" />
+					</a>
+				</li>
+				<li  data-href="{:U('list/laws', array('id' => 15, 'nav_id' => 10))}">
+					<a>
+						<span>市容环卫</span>
+						<img src="/themes/wangge/img/code4.png" />
+					</a>
+				</li>
+				<li  data-href="{:U('list/laws', array('id' => 16, 'nav_id' => 10))}">
+					<a>
+						<span>行政审批</span>
+						<img src="/themes/wangge/img/code5.png" />
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="message">
+			<div class="mess_cont">
+				<div class="mess_left">
+					<h2>留言</h2>
+					<p>您有任何问题，请与我们联系</p>
+					<div><img src="/themes/wangge/img/phe.png"/><span>021-51763883</span></div>
+					<div><img src="/themes/wangge/img/email.png"/><span>qibao@gov.com</span></div>
+					<div><img src="/themes/wangge/img/posi.png"/><span>上海市吴中路2579号</span></div>
+				</div>
+				<div class="mess_rigth">
+					<img src="/themes/wangge/img/feng.png" />
+				</div>
+			</div>
+		</div>
+		<div class="referring">
+			<div class="refer_cont">
+				<form class="feedback">
+					<div><span>请输入姓名</span><input type="text" name="username" /><em style="display: none">姓名不能为空</em></div>
+					<div><span>请输入标题</span><input type="text" name="title" /><em style="display: none">标题不能为空</em></div>
+					<div><span>请输入留言</span><textarea></textarea><em style="display: none">留言不能为空</em></div>
+					<input value="提交" class="smt" onclick="guestBook()" style="cursor: pointer" />
+				</form>
+			</div>
+		</div>
+		<div class="facilitate">
+			<div class="fac_cont">
+				<p><span>便民</span><span>视频</span></p>
+				<div class="fac_re">
+					<div class="fac_re1">
+						<ul class="fac1">
+							<foreach name="conveniencePost" item="vo">
+							<li>
+								<a href="{:U('article/index', array('id'=>$vo['id'],'cid'=>$vo['term_id'], 'nav_id' => 73))}">
+									<div><img src="<?php echo sp_get_image_url(json_decode($vo['smeta'], true)['thumb'])?>"/></div>
+									<span>{$vo.post_title|mb_substr=0,20,'utf-8'}</span>
+									<em>{$vo.post_date|substr=0,10}</em>
+								</a>
+							</li>
+							</foreach>
+							<!--<li>-->
+								<!--<a href="JavaScript:;">-->
+									<!--<div><img src="/themes/wangge/img/dog.png"/></div>-->
+									<!--<span>上海部分宠物医院，宠物诊所</span>-->
+									<!--<em>2016-4-5</em>-->
+								<!--</a>-->
+							<!--</li>-->
+							<!--<li>-->
+								<!--<a href="JavaScript:;">-->
+									<!--<div><img src="/themes/wangge/img/dog.png"/></div>-->
+									<!--<span>上海部分宠物医院，宠物诊所</span>-->
+									<!--<em>2016-4-5</em>-->
+								<!--</a>-->
+							<!--</li>-->
+						</ul>
+						<ul class="fac2">
+							<foreach name="videoPost" item="vo">
+								<li>
+									<a href="{:U('article/index', array('id'=>$vo['id'],'cid'=>$vo['term_id'], 'nav_id' => 4))}">
+										<div><img src="<?php echo sp_get_image_url(json_decode($vo['smeta'], true)['thumb'])?>"/></div>
+										<span>{$vo.post_title|mb_substr=0,20,'utf-8'}</span>
+										<em>{$vo.post_date|substr=0,10}</em>
+									</a>
+								</li>
+							</foreach>
+							<!--<li>-->
+								<!--<a href="JavaScript:;">-->
+									<!--<div><img src="/themes/wangge/img/dog.png"/></div>-->
+									<!--<span>上海部分宠物医院，宠物诊所</span>-->
+									<!--<em>2016-4-5</em>-->
+								<!--</a>-->
+							<!--</li>-->
+							<!--<li>-->
+								<!--<a href="JavaScript:;">-->
+									<!--<div><img src="/themes/wangge/img/dog.png"/></div>-->
+									<!--<span>上海部分宠物医院，宠物诊所</span>-->
+									<!--<em>2016-4-5</em>-->
+								<!--</a>-->
+							<!--</li>-->
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<tc_include file="Public:footer"/>
+	</body>
+
+</html>
+<script src="/themes/wangge/js/jquery-1.11.0.js"></script>
+
+<script>
+
+	var guestBookUrl = "{:U('Index/guestBook')}";
+
+</script>
+<script src="/themes/wangge/js/index.js"></script>

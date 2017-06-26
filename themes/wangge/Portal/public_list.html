@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>信息公开</title>
+		<link rel="stylesheet" href="/themes/wangge/css/comment.css" type="text/css" />
+		<link rel="stylesheet" href="/themes/wangge/css/make_ public.css" />
+		<script src="/themes/wangge/js/jquery-1.11.0.js"></script>
+	</head>
+
+	<body>
+		<tc_include file="Public:nav"/>
+		
+		<php>
+		foreach($nav_one as $k => $v){
+			if($v['selected'] === true){
+				$nav_one_selected_href = $v['href'];
+			}
+		}
+		foreach($nav_two as $k => $v){
+			if($v['selected'] === true){
+				$name = $v['label'];
+			}
+		}
+		</php>
+		<div class="mainOut">
+			<div class="top">
+				<img class="home" src="/themes/wangge/img/home.png"/>
+				<span><a href="./">首页</a></span>
+				<span>></span>
+				<span><a href="{$nav_one_selected_href}">信息公开</a></span>
+				<span>></span>
+				<span class="bmxx">{$name}</span>
+			</div>
+			<div class="page1">
+				<ul>
+
+				<php>
+				foreach($nav_two as $k => $v){
+					if($v['selected'] === true){
+						$class_li  = 'addBorder';
+						$class_div = 'addColor';
+					}else{
+						$class_li  = '';
+						$class_div = '';
+					}
+					
+					echo '<li class="'.$class_li.'">
+							<a href="'.$v['href'].'"><img src="'.$v['icon'].'" alt="'.$v['label'].'" /></a>
+							<div>
+								<a class="'.$class_div.'" href="'.$v['href'].'">'.$v['label'].'</a>
+							</div>
+						</li>';
+				}
+				</php>
+				</ul>
+				</div>
+			<div class="main">
+				<div class="bt">{$name}</div>
+				<div class="btn1 btn">
+					<php>
+					foreach($nav_three as $k => $v){
+						if($v['selected'] === true){
+							echo '<span class="addBg"><a href="'.$v['href'].'">'.$v['label'].'</a></span>';
+						}else{
+							echo '<span><a href="'.$v['href'].'">'.$v['label'].'</a></span>';
+						}
+					}
+					</php>
+				</div>
+				<div class="btn2 btn">
+					<php>
+					foreach($nav_four as $k => $v){
+						if($v['selected'] === true){
+							echo '<span class="addBg"><a href="'.$v['href'].'">'.$v['label'].'</a></span>';
+						}else{
+							echo '<span><a href="'.$v['href'].'">'.$v['label'].'</a></span>';
+						}
+					}
+					</php>
+				</div>
+				<ul class="ul2">
+					<php>
+						$lists = sp_sql_posts_paged("cid:$cat_id;order:post_date DESC;",6);
+					</php>
+					
+					<volist name="lists['posts']" id="vo">
+						<li>
+							<div class="time">{$vo.post_modified|substr=0,10}</div>
+							<div class="title">{$vo.post_title}</div>
+							<div class="text">{$vo.post_excerpt|msubstr=0,256}</div>
+							<a href="{:leuu('article/index',array('id'=>$vo['object_id'],'cid'=>$vo['term_id'],'nav_id'=>intval($_REQUEST['nav_id'])))}" class="details">查看详情</a>
+						</li>
+					</volist>
+					
+				</ul>
+				<if condition="!empty($lists['page'])">
+					<div class="bar">
+						{$lists['page']}
+					</div>
+				</if>
+			</div>
+		</div>
+		<tc_include file="Public:footer"/>
+	</body>
+
+</html>
+<script>
+	
+	$('.bar span').click(function(){
+		$(this).addClass('addRed').siblings().removeClass('addRed');
+	})
+	$('.btn span').click(function(){
+		$(this).toggleClass('addBg').siblings().removeClass('addBg');
+	})
+	$('.page1 ul li').click(function(){
+		var index = $(this).index();
+		$(this).toggleClass('addBorder').siblings().removeClass('addBorder');
+		$('.page1 ul li div').removeClass('addColor');
+		$('.page1 ul li div').eq(index).addClass('addColor');
+		//location.href = $(this).attr('data-href');
+	})
+</script>

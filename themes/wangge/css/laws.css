@@ -1,0 +1,35 @@
+img{display: inline-block;}
+a{color:#999;}
+.mainOut{width: 100%;background: #f9f9f9;padding-bottom: 40px;}
+
+.top{margin-bottom: 24px;margin: 0 auto;width: 1084px;height: 80px;line-height: 80px;font-size: 14px;}
+.home{margin-left: 19px;}
+.top span{margin-left: 20px;}
+.bmxx{color: #e40000;}
+.page1{width: 100%;height: 200px;background: #fff;margin-bottom: 103px;}
+.page1 ul{width:1084px;margin: 0 auto;}
+.page1 ul li{display: inline-block;width: 175px;height: 140px;text-align: center;margin-top: 30px;cursor: pointer}
+.page1 ul li img{margin: 0 auto;display: block;height: 80px;}
+.page1 ul li div{margin-top: 28px;}
+.main{width: 1084px;margin: 0 auto;}
+.bt{font-size: 28px;color: #555;text-align: center;margin-bottom: 103px;}
+.btn span{font-size: 14px;display: inline-block;height: 24px;border: 1px solid #dbdbdb;border-radius: 15px;padding: 0px 18px;line-height: 24px;margin-left: 15px;cursor: pointer;}
+.btn1{text-align: center;margin-top: 64px;}
+.btn2{text-align: center;margin-top: 35px;margin-bottom: 37px;}
+.ul2{width:1084px;overflow: hidden;margin-left: -10px;}
+.ul2 li{display: block;width: 325px;height: 159px;background: #fff;padding: 33px 0 33px 15px;float: left;margin: 0 10px 15px;}
+.time{font-size: 16px;}
+.text{color: #999999;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;width: 185px;}
+.title{margin-top: 21px;margin-bottom: 35px;font-size: 16px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;width: 247px;}
+.details{margin-top: 50px;font-size: 14px;display: block;color:#333333}
+.bar{height: 55px;background: #f0f0f0;width:1060px;margin-top: 40px;text-align: center;line-height: 55px;}
+/*.bar span{margin-left: 22px;padding: 9px 14px;cursor: pointer;}*/
+.addRed{background: red;}
+.addBg{background: red;color: #fff;}
+.addBorder{border-radius: 10px;/*box-shadow: 1px 1px 10px 5px #f0f0f0;*/background-image: url(../img/pic-bg.png);background-repeat: no-repeat;background-position: bottom left;}
+.addColor{color: #e70012;}
+
+.bar li {display: inline-block;margin-left: 22px;}
+.bar li span, .bar li a{padding: 9px 14px;cursor: pointer;}
+.bar li span.current{background: red;color: #fff;}
+.bar li a { color: #666;}

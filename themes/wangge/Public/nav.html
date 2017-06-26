@@ -1,0 +1,23 @@
+<div class="hreader">
+			<div class="log">
+				<img src="/themes/wangge/img/logo.png" />
+			</div>
+			<ul>
+
+				<volist name="navTopArr" id="vo">
+					<li 
+					<if condition="sp_get_menu_top(intval($_REQUEST['nav_id'])) == $vo['id']">
+					class="cread"
+					
+					</if>
+					>
+
+						<a href="{$vo.href}&nav_id={$vo.id}">{$vo.label}</a>
+					</li>
+				</volist>
+
+				
+
+
+			</ul>
+		</div>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="/themes/wangge/css/mobile.css"/>
+		<link rel="stylesheet" href="/themes/wangge/css/swiper-3.4.1.min.css" />
+		<script type="text/javascript" src="/themes/wangge/js/rem.js" ></script>
+	</head>
+	<body>
+		<div class="header">
+			<img class="logo" src="/themes/wangge/img/mobile/logo.png"/>
+			<img class="menu" src="/themes/wangge/img/mobile/menu.png"/>
+		</div>
+		<ul id="nav">
+			<li class="li1"><a href="{:U('/', array('nav_id' => 1))}">首页</a></li>
+			<li class="li2"><a href="{:U('list/index', array('id' => 5, 'nav_id' => 4))}">新闻中心</a></li>
+			<li class="li3"><a href="{:U('list/index', array('id' => 11, 'nav_id' => 10))}">政策法规</a></li>
+			<li class="li4"><a href="{:U('list/index', array('id' => 18, 'nav_id' => 17))}">信息公开</a></li>
+			<li class="li5"><a href="{:U('list/index', array('id' => 73, 'nav_id' => 72))}">网上办事</a></li>
+			<li class="li6"><a href="{:U('list/index', array('id' => 74, 'nav_id' => 73))}">便民信息</a></li>
+		</ul>
+		<div class="main">
+			<div class="banner">
+				<img src="/themes/wangge/img/mobile/banner.png"/>
+			</div>
+			<div class="page1">
+				<div class="top">
+					<img src="/themes/wangge/img/mobile/line.png"/>
+					<div class="title">城管网格中心</div>
+					<img src="/themes/wangge/img/mobile/line.png"/>
+				</div>
+				
+				<ul>
+					<li>
+						<a href="{:U('list/index', array('id' => 19, 'nav_id' => 18))}">
+							<div class="round round1"><img src="/themes/wangge/img/mobile/sz.png"/></div>
+							<div class="bt">市政方面</div>
+							<p>七宝镇市政工程，包括道路，包括公路、城市道路及其桥涵、道口、停车场等附属设施。 市政管线，包括供水管道市政管线，包括供水管道市政管线，包括供水管道市政管线，包括供水管道市政管线，包括供水管道市政管线，包括供水管道市政管线，包括供水管道市政管线，包括供水管道市政管线，包括供水管道</p>
+						</a>
+					</li>
+					<li>
+						<a href="{:U('list/index', array('id' => 27, 'nav_id' => 26))}">
+							<div class="round"><img src="/themes/wangge/img/mobile/lh.png"/></div>
+							<div class="bt">绿化方面</div>
+							<p>七宝镇栽植防护林、路旁树木、农作物以及居民区和公园内的各种植物等。</p>
+						</a>
+					</li>
+					<li>
+						<a href="{:U('list/index', array('id' => 34, 'nav_id' => 33))}">
+							<div class="round"><img src="/themes/wangge/img/mobile/hw.png"/></div>
+							<div class="bt">环卫方面</div>
+							<p>七宝镇城市环境卫生管理，是在城市政府领导下，行政主管部门依靠专职队伍和社会力量，依法对道路、公共场所、垃圾...</p>
+						</a>
+					</li>
+					<li>
+						<a href="{:U('list/index', array('id' => 46, 'nav_id' => 45))}">
+							<div class="round"><img src="/themes/wangge/img/mobile/sr.png"/></div>
+							<div class="bt">市容方面</div>
+							<p>七宝镇市政工程，包括道路，包括公路、城市道路及其桥涵、道口、停车场等附属设施。 市政管线，包括供水管道...</p>
+						</a>
+					</li>
+					<li>
+						<a href="{:U('list/index', array('id' => 57, 'nav_id' => 56))}">
+							<div class="round"><img src="/themes/wangge/img/mobile/jt.png"/></div>
+							<div class="bt">交通方面</div>
+							<p>七宝镇栽植防护林、路旁树木、农作物以及居民区和公园内的各种植物等。</p>
+						</a>
+					</li>
+					<li>
+						<a href="{:U('list/index', array('id' => 62, 'nav_id' => 61))}">
+							<div class="round"><img src="/themes/wangge/img/mobile/lj.png"/></div>
+							<div class="bt">建筑垃圾、渣土管理</div>
+							<p>七宝镇城市环境卫生管理，是在城市政府领导下，行政主管部门依靠专职队伍和社会力量，依法对道路、公共场所、垃圾...</p>
+						</a>
+					</li>
+				</ul>
+
+			</div>
+			<div class="page2">
+				<div class="top">
+					<img src="/themes/wangge/img/mobile/line.png"/>
+					<div class="title">新闻中心</div>
+					<img src="/themes/wangge/img/mobile/line.png"/>
+				</div>
+				<ul>
+					<foreach name="infoCenter" item="vo">
+						<li><a href="{:leuu('portal/article/index',array('id'=>$vo['id'],'cid'=>$vo['term_id'], 'nav_id' => 4))}"><img src="/themes/wangge/img/mobile/ulImg.png"/></a></li>
+					</foreach>
+				</ul>
+				<div class="allNews">
+					<a href="{:U('list/index', array('id' => 5, 'nav_id' => 4))}">
+						<span>查看全部新闻</span>
+						<img src="/themes/wangge/img/mobile/jtRed.png" alt="" />
+					</a>
+				</div>
+			</div>
+			<div class="page3">
+				<div class="title">信息公开</div>
+				<p>
+					信息公开是指国家行政机关和法律、法规以及规
+					章授权和委托的组织，在行使国家行政管理职权的过程中，
+					通过法定形式和程序，主动将政府信息向社会公众或依申请
+					而向特定的个人或组织公开的制度。2015年2月，针对信息
+					公开“成绩单”公布，国务院办公厅严格督查，各部
+					门“交作业”的时间大为提前。不过，信息公开“成绩单”
+					公布，不只需要速度和规模，下一步，
+					得在“质量”上面多下下工夫才行。
+				</p>
+				<div class="more">
+					<a href="{:U('list/index', array('id' => 18, 'nav_id' => 17))}">
+						<span>查看更多</span>
+						<img src="/themes/wangge/img/mobile/jtRed.png" alt="" />
+					</a>
+				</div>
+			</div>
+			<div class="page4">
+				<div class="top">
+					<img src="/themes/wangge/img/mobile/line.png"/>
+					<div class="title">政策法规</div>
+					<img src="/themes/wangge/img/mobile/line.png"/>
+				</div>
+				<ul class="laws_list">
+					<li data-href="{:U('list/laws', array('id' => 12, 'nav_id' => 10))}"><a><div>绿化方面</div><img src="/themes/wangge/img/mobile/pic1.png"/></a></li>
+					<li data-href="{:U('list/laws', array('id' => 13, 'nav_id' => 10))}"><a><div>林业方面</div><img src="/themes/wangge/img/mobile/pic2.png"/></a></li>
+					<li data-href="{:U('list/laws', array('id' => 14, 'nav_id' => 10))}"><a><div>野生动植物保护</div><img src="/themes/wangge/img/mobile/pic3.png"/></a></li>
+					<li data-href="{:U('list/laws', array('id' => 15, 'nav_id' => 10))}"><a><div>市容环卫</div><img src="/themes/wangge/img/mobile/pic4.png"/></a></li>
+				</ul>
+			</div>
+			<div class="page5">
+				<div class="ly">留言</div>
+				<form class="feedback">
+					<p><span>请输入姓名</span><input type="text" /></p>
+					<p><span>请输入标题</span><input type="text" /></p>
+					<p><span class="span3">请输入留言内容</span><input type="text" /></p>
+					<input onclick="guestBook()" class="sub" type="button" name="" id="" value="提交" />
+				</form>
+			</div>
+		</div>
+		<div class="footer">
+			<div class="code"><img src="/themes/wangge/img/mobile/code.png"/></div>
+			<div class="slogan">
+				<p>同创全国文明城区   </p>
+				<p>共创闵行美好家园</p>
+				<p>扫一扫关注微信公众号</p>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="/themes/wangge/js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="/themes/wangge/js/swiper.min.js" ></script>
+	<script>
+	$(function(){
+//		var flag = true;
+//		$(".menu").click(function(){
+//			if(flag){
+//				$('.nav').slideUp(200);
+//				flag=false;
+//			}else{
+//				$('.nav').slideDown(200);
+//				flag=true;
+//			}
+//			
+//		})
+        $(".menu").bind("click", function () {
+            $("#nav").slideToggle();
+        });
+        $(".li1").bind("click", function () {
+            mySwiper.slideTo(0, 1000, false);
+        });
+        $(".li2").bind("click", function () {
+            mySwiper.slideTo(1, 1000, false);
+        });
+        $(".li3").bind("click", function () {
+            mySwiper.slideTo(2, 1000, false);
+        });
+        $(".li4").bind("click", function () {
+            mySwiper.slideTo(3, 1000, false);
+        });
+        $(".li5").bind("click", function () {
+            mySwiper.slideTo(4, 1000, false);
+        });
+        $(".li6").bind("click", function () {
+            mySwiper.slideTo(5, 1000, false);
+        });
+
+        $(".laws_list li").on('click', function () {
+            location.href = $(this).attr('data-href');
+        })
+	});
+
+    /**
+     * 提交留言
+     */
+    function guestBook() {
+        var username = $(".feedback input").eq(0).val();
+        var title = $(".feedback input").eq(1).val();
+        var content = $(".feedback input").eq(2).val();
+        var flag = true;
+        if (username == '') {
+            alert('姓名不能为空');
+            return false;
+        }
+
+        if (title == '') {
+            alert('标题不能为空');
+            return false;
+        }
+
+        if (content == '') {
+            alert('内容不能为空');
+            return false;
+        }
+
+        $.ajax({
+            url: "{:U('Index/guestBook')}",
+            type: 'post',
+            dataType: 'json',
+            data: {
+                username: username,
+                title: title,
+                content: content
+            },
+            success: function (res) {
+                if (res.code === 0) {
+                    $(".feedback input").eq(0).val('');
+                    $(".feedback input").eq(1).val('');
+                    $(".feedback input").eq(2).val('');
+                }
+                alert(res.msg);
+            },
+            error: function (res) {
+                alert('提交失败');
+            }
+        })
+    }
+
+
+	</script>
+</html>
